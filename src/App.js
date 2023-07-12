@@ -14,7 +14,7 @@ export default function App() {
   }, []);
   const handleChange = (e) => {
     setTimeout(() => {
-      setSearch(e.target.value);
+      setSearch(e.target.value.toLowerCase());
     }, 1000);
   };
   return (
