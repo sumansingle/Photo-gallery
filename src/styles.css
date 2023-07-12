@@ -1,0 +1,123 @@
+.App {
+  font-family: sans-serif;
+}
+
+.photogrid {
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 40px;
+}
+.photoflex {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Updated value for displaying three items per row */
+  justify-content: space-between;
+  padding: 10px;
+  border: 2px solid #3c4043;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(1, 2, 4, 10);
+  scroll-behavior: smooth;
+}
+.name {
+  font-size: 30px;
+}
+.searchbar {
+  width: 70%;
+  margin-top: 25px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  float: end;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+input {
+  padding: 13px;
+  width: 70%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(1, 2, 4, 10);
+  border: 1px solid ghostwhite;
+  outline: none;
+}
+img {
+  border-radius: 10px;
+}
+
+p {
+  font-family: Georgia;
+  font-size: 1.1rem;
+  width: 200px;
+}
+.photogrid {
+  position: relative;
+}
+
+.popupoverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popupcontent {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(2, 3, 4, 10);
+}
+
+.popupcontent img {
+  max-width: 100%;
+  max-height: 80vh;
+  margin-bottom: 10px;
+}
+
+.popupcontent p {
+  margin-bottom: 10px;
+}
+
+.popupcontent button {
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.popupcontent button:hover {
+  background-color: #555;
+}
+.footer {
+  position: absolute;
+  opacity: 0.5;
+  pointer-events: none;
+}
+@media (min-width: 200px) and (max-width: 600px) {
+  .photoflex {
+    grid-template-columns: 1fr;
+  }
+  img {
+    width: 90%;
+    border-radius: 10px;
+  }
+}
+@media (min-width: 600px) and (max-width: 900px) {
+  .photoflex {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1200px) {
+  .photoflex {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
