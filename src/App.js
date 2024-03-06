@@ -33,7 +33,12 @@ export default function App() {
               : item.title.toLowerCase().includes(search);
           })
           .map((item, index) => (
-            <Photogrid src={item.url} alt={item.id} title={item.title} />
+            <Photogrid
+              src={item.url}
+              alt={item.id}
+              title={item.title}
+              imageUrl={item.url}
+            />
           ))}
       </div>
       <p className="footer"> Made by suman 🔥</p>

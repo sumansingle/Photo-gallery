@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../src/styles.css";
+import DownloadButton from "./download";
 
 function Photogrid(props) {
   const [showPopup, setShowPopup] = useState(false);
@@ -13,13 +14,21 @@ function Photogrid(props) {
   };
 
   return (
-    <div className="photogrid">
+    <div
+      className="photogrid"
+      style={{ position: "relative", display: "inline-block" }}
+    >
       <img
         src={props.src}
         alt={props.id}
         height={200}
         width={250}
         onClick={handleClick}
+        style={{ display: "block" }}
+      />
+      <DownloadButton
+        imageUrl={props.src}
+        style={{ position: "absolute", bottom: 10, left: 0 }}
       />
       <p>{props.title}</p>
 
@@ -29,6 +38,7 @@ function Photogrid(props) {
             <img src={props.src} alt={props.id} />
             <p>{props.title}</p>
             <button onClick={handleClosePopup}>❌</button>
+            <DownloadButton imageUrl={props.src} />
           </div>
         </div>
       )}
